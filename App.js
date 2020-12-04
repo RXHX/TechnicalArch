@@ -5,8 +5,7 @@
  * @format
  * @flow strict-local
  */
-
-import React,{useEffect} from 'react';
+import React, {Fragment, useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -14,9 +13,9 @@ import {
   View,
   Text,
   StatusBar,
+  Platform,
 } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-
 import {
   Header,
   LearnMoreLinks,
@@ -24,17 +23,15 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import { create } from 'react-test-renderer';
 
 const App = () => {
-  useEffect(create = () => {
-     SplashScreen.hide();
-  },inputs = []);
-  
-  
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
+    <Fragment>
+      {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
@@ -75,7 +72,7 @@ const App = () => {
           </View>
         </ScrollView>
       </SafeAreaView>
-    </>
+    </Fragment>
   );
 };
 
