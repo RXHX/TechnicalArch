@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import {View,Text,StyleSheet, Image, ScrollView, TextInput,TouchableOpacity,Dimensions} from 'react-native';
+import Starting from './Starting';
 class Login_Screen extends React.Component{
     constructor(props)
     {
@@ -19,13 +20,7 @@ class Login_Screen extends React.Component{
            }
         if(this.state.info == 1) {
             return (
-                <Fragment>
-                    <ScrollView>
-                <View style = {{backgroundColor:'#FFFF45'}}>
-                  <Text>Hello</Text>
-                </View>
-                </ScrollView>
-                </Fragment>
+                <Starting/>
             )
 
         }
