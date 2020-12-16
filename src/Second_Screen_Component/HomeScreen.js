@@ -1,40 +1,70 @@
 import React, { Component } from 'react';
-
+import RenderIf from '../Renderer/RenderIf';
 import {
    View,
    Image,StyleSheet,
-  Text,
-  TouchableOpacity,
-  Linking,
-  ImageBackground,
-  Button,
-  Dimensions
+    Linking,
+  Dimensions,
+  TouchableHighlight
 } from 'react-native';
-
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import { RNCamera } from 'react-native-camera';
 
-class ScanScreen extends Component {
-  onSuccess = e => {
-    Linking.openURL(e.data).catch(err =>
-      console.error('An error occured', err)
-    );
-  };
 
+class ScanScreen extends Component {
+  
+constructor(props)
+{
+   super(props);
+   this.state = {
+     active : false
+   }
+
+}
+
+
+onSuccess = e => {
+  Linking.openURL(e.data).catch(err =>
+    console.error('An error occured', err)
+  );
+};
+
+ 
   render() {
+ 
+    onclickerable = () => {
+      this.setState({
+        active : true
+      })
+     
+      console.log('Reached Here'+this.state.active);
+   }
+ 
+ 
     return (
-      <View >
-       <View style = {{backgroundColor:"#FFF456"}}>
-   <Image source = {require('F:/TechnicalArch-main/assest/Main_Screen/home.png')} style = {{width:30,height:30,marginLeft:Dimensions.get('screen').width-35}}></Image>
-        <QRCodeScanner
-          cameraStyle = {{width:50,height:150}}
-          onRead={this.onSuccess}
-          flashMode={RNCamera.Constants.FlashMode.torch}
-          cameraStyle = {{width:30,height:30,marginLeft:160,marginTop:20}}
-         />
-         </View>
-         </View>
-    );
+      <View style={{ flex:1,backgroundColor: '#fff' }}>
+     <TouchableHighlight onPress = {onclickerable} style = {{height:50,width:50,marginLeft:300}}>
+       {
+         this.state.active ?
+         <QRCodeScanner
+         onRead={this.onSuccess}
+         flashMode={RNCamera.Constants.FlashMode.torch}
+         cameraStyle = {{marginLeft:-150}}
+        />
+           :
+           <Image 
+           source = {require('../../assest/Main_Screen/home.png')}
+           style = {{height:50,width:50}}
+           >
+          </Image>
+       }
+   </TouchableHighlight>
+   </View>
+    
+         
+          
+                  
+        );
   }
 }
 
