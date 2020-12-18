@@ -21,7 +21,7 @@ const bottomTabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Image 
-          source = {require('F:/TechnicalArch-main/assest/Main_Screen/home.png')}
+          source = {require('../../../assest/Main_Screen/home.png')}
           style = {{backgroundColor: tintColor, width:20,height:20}} />
         )
       }
@@ -31,7 +31,7 @@ const bottomTabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Image 
-          source = {require('F:/TechnicalArch-main/assest/Main_Screen/comments.png')}
+          source = {require('../../../assest/Main_Screen/comments.png')}
           style = {{backgroundColor: tintColor, width:20,height:20}} />
         )
       }
@@ -41,7 +41,7 @@ const bottomTabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Image 
-          source = {require('F:/TechnicalArch-main/assest/Main_Screen/search.png')}
+          source = {require('../../../assest/Main_Screen/search.png')}
           style = {{backgroundColor: tintColor, width:20,height:20}} />
           
         )
@@ -52,7 +52,7 @@ const bottomTabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Image 
-          source = {require('F:/TechnicalArch-main/assest/Main_Screen/user.png')}
+          source = {require('../../../assest/Main_Screen/user.png')}
           style = {{backgroundColor: tintColor, width:20,height:20}} />
          
         )

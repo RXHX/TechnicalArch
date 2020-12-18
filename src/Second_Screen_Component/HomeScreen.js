@@ -8,10 +8,9 @@ import {
   Animated,
   Dimensions
 } from 'react-native';
-import QRCodeScanner from 'react-native-qrcode-scanner';
-import { RNCamera } from 'react-native-camera';
 import { TextInput } from 'react-native-gesture-handler';
-
+import QRCodeScanner from 'react-native-qrcode-scanner';
+import {RNCamera} from 'react-native-camera';
 
 class ScanScreen extends Component {
   
@@ -25,20 +24,24 @@ constructor(props)
    this.state = {
      active : false,
    };
-   
+} 
 
-}
+  renderResults = () => {
+    this.setState({
+      isVisible: !this.state.isVisible, //toggles the visibilty of the text
+    });
+  };
 
-
-onSuccess = e => {
-  Linking.openURL(e.data).catch(err =>
-    console.error('An error occured', err)
-  );
-};
+  onSuccess = (e) => {
+    Linking.openURL(e.data).catch((err) =>
+      console.error('An error occured', err),
+    );
+  };
 
  
-  render() {
- 
+
+  render() 
+  {
     onclickerable = () => {
       this.setState({
         active : true,
@@ -134,9 +137,9 @@ onSuccess = e => {
  </View>
 );
   }
-}
 
-const styles = StyleSheet.create({
+}  
+  const styles = StyleSheet.create({
   textBold: {
     fontSize: 15,
     fontWeight:'bold',
@@ -158,5 +161,7 @@ const styles = StyleSheet.create({
     height: 550,
     width: Dimensions.get('window').width
   }
+  
 });
+
 export default ScanScreen; 
