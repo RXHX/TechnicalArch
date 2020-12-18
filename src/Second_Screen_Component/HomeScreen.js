@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {
-   View,
-   Image,StyleSheet,
-    Linking,
+  View,
+  Image,StyleSheet,
+  Linking,
   Text,
   TouchableHighlight,
   Animated,
