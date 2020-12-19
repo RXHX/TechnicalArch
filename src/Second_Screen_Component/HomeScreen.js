@@ -11,7 +11,7 @@ import {
 import { TextInput } from 'react-native-gesture-handler';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
-
+import LocationFinder from '../Component/LocationFinder/LocationFinder';
 class ScanScreen extends Component {
   
 constructor(props)
@@ -130,6 +130,7 @@ constructor(props)
         //   inlineImagePadding = {10}
         style = {{borderRadius:4,borderWidth:3,marginLeft:10,marginRight:10}}
         />
+    
         
       </View>
       </View> 
